@@ -1,6 +1,7 @@
 package forum
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.plugins.springsecurity.Secured
 
 class PostController {
 
@@ -15,6 +16,7 @@ class PostController {
         [postInstanceList: Post.list(params), postInstanceTotal: Post.count()]
     }
 
+	@Secured(['IS_AUTHENTICATED_REMEMBERED'])
     def create() {
         [postInstance: new Post(params)]
     }
