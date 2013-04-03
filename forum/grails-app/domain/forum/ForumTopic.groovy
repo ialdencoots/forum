@@ -1,6 +1,6 @@
 package forum
 
-class Category {
+class ForumTopic {
 
 	String name
 	static hasMany = [threads: ForumThread]
