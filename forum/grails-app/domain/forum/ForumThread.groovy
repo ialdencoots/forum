@@ -8,4 +8,8 @@ class ForumThread {
 
     static constraints = {
     }
+
+	String toString() {
+		return title
+	}
 }

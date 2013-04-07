@@ -4,6 +4,7 @@ import org.springframework.dao.DataIntegrityViolationException
 import grails.plugins.springsecurity.Secured
 
 class PostController {
+	def springSecurityService
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -18,7 +19,10 @@ class PostController {
 
 	@Secured(['IS_AUTHENTICATED_REMEMBERED'])
     def create() {
-        [postInstance: new Post(params)]
+		def currentUser = springSecurityService.currentUser
+		currentUser.attach() 
+
+        [postInstance: new Post(params), currentUserID: currentUser.getId()]
     }
 
     def save() {
