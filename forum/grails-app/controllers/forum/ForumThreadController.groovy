@@ -1,8 +1,10 @@
 package forum
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.plugins.springsecurity.Secured
 
 class ForumThreadController {
+	def springSecurityService
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -15,14 +17,24 @@ class ForumThreadController {
         [forumThreadInstanceList: ForumThread.list(params), forumThreadInstanceTotal: ForumThread.count()]
     }
 
+	@Secured(['IS_AUTHENTICATED_REMEMBERED'])
     def create() {
-        [forumThreadInstance: new ForumThread(params)]
+
+        [forumThreadInstance: new ForumThread(params), topicID: params.topicID, postInstance: new Post(params)]
     }
 
+	@Secured(['IS_AUTHENTICATED_REMEMBERED'])
     def save() {
-        def forumThreadInstance = new ForumThread(params)
+		def postInstance = new Post()
+		postInstance.message = params.message
+		postInstance.user = springSecurityService.currentUser
+        def forumThreadInstance = new ForumThread(params).addToPosts(postInstance)
         if (!forumThreadInstance.save(flush: true)) {
-            render(view: "create", model: [forumThreadInstance: forumThreadInstance])
+            render(view: "create", model: [forumThreadInstance: forumThreadInstance, postInstance: postInstance])
+            return
+        }
+        if (!postInstance.save(flush: true)) {
+            render(view: "show", model: [forumThreadInstance: forumThreadInstance])
             return
         }
 

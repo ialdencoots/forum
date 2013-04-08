@@ -23,11 +23,11 @@
 			</g:if>
 			<ol class="property-list forumThread">
 			
-				<g:if test="${forumThreadInstance?.date}">
+				<g:if test="${forumThreadInstance?.title}">
 				<li class="fieldcontain">
-					<span id="date-label" class="property-label"><g:message code="forumThread.date.label" default="Date" /></span>
+					<span id="title-label" class="property-label"><g:message code="forumThread.title.label" default="Title" /></span>
 					
-						<span class="property-value" aria-labelledby="date-label"><g:formatDate date="${forumThreadInstance?.date}" /></span>
+						<span class="property-value" aria-labelledby="title-label"><g:fieldValue bean="${forumThreadInstance}" field="title"/></span>
 					
 				</li>
 				</g:if>
@@ -43,11 +43,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${forumThreadInstance?.title}">
+				<g:if test="${forumThreadInstance?.topic}">
 				<li class="fieldcontain">
-					<span id="title-label" class="property-label"><g:message code="forumThread.title.label" default="Title" /></span>
+					<span id="topic-label" class="property-label"><g:message code="forumThread.topic.label" default="Topic" /></span>
 					
-						<span class="property-value" aria-labelledby="title-label"><g:fieldValue bean="${forumThreadInstance}" field="title"/></span>
+						<span class="property-value" aria-labelledby="topic-label"><g:link controller="forumTopic" action="show" id="${forumThreadInstance?.topic?.id}">${forumThreadInstance?.topic?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

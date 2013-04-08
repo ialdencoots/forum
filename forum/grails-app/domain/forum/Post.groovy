@@ -15,5 +15,6 @@ class Post {
 	}
 
     static constraints = {
+		message blank: false
     }
 }
