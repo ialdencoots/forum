@@ -17,20 +17,11 @@
 			</ul>
 		</div>
 		<div id="show-forumTopic" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+			<h1>${forumTopicInstance?.name}</h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list forumTopic">
-			
-				<g:if test="${forumTopicInstance?.name}">
-				<li class="fieldcontain">
-					<span id="name-label" class="property-label"><g:message code="forumTopic.name.label" default="Name" /></span>
-					
-						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${forumTopicInstance}" field="name"/></span>
-					
-				</li>
-				</g:if>
 			
 				<g:if test="${forumTopicInstance?.threads}">
 				<li class="fieldcontain">

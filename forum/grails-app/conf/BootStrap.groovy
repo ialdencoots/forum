@@ -3,6 +3,7 @@ import forum.ForumRole
 import forum.ForumUserForumRole
 import forum.ForumTopic
 import forum.ForumThread
+import forum.Post
 
 class BootStrap {
 
@@ -21,6 +22,7 @@ class BootStrap {
 	def top2 = new ForumTopic(name: "Chicks").save(flush: true)
 	def top3 = new ForumTopic(name: "Beer").save(flush: true)
 	def thread1 = new ForumThread(title: "Test Thread", topic: top3, date: new Date()).save(flush:true)
+	def post1 = new Post(user: testUser, thread: thread1, message: "Hälften av alla som drunkar har alkohol i blodet.").save(flush: true)
 
 	assert ForumUser.count() == 2
 	assert ForumRole.count() == 2
