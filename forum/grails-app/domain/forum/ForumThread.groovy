@@ -10,6 +10,10 @@ class ForumThread {
 		title blank: false
     }
 
+	static mapping = {
+		posts sort: 'time', order: 'asc'
+	}
+
 	String toString() {
 		return title
 	}

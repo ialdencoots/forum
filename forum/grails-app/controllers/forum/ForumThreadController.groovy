@@ -50,7 +50,7 @@ class ForumThreadController {
             return
         }
 
-        [forumThreadInstance: forumThreadInstance]
+        [forumThreadInstance: forumThreadInstance, forumThreadPosts: forumThreadInstance.getPosts()]
     }
 
     def edit(Long id) {

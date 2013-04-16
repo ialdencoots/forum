@@ -43,14 +43,8 @@
 			
 			
 				<g:if test="${forumThreadInstance?.posts}">
-				<li class="fieldcontain">
-					<span id="posts-label" class="property-label"><g:message code="forumThread.posts.label" default="Posts" /></span>
 					
-						<g:each in="${forumThreadInstance.posts}" var="p">
-						<span class="property-value" aria-labelledby="posts-label"><g:link controller="post" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
+				<g:render template="/displaypost" collection="${forumThreadPosts}" var="postInstance" />
 				</g:if>
 			
 			</ol>
