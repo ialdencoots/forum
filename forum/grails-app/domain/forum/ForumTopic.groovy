@@ -7,4 +7,8 @@ class ForumTopic {
 
     static constraints = {
     }
+
+	String toString() {
+		return name
+		}
 }

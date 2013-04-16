@@ -31,6 +31,16 @@
 					
 				</li>
 				</g:if>
+
+				<g:if test="${forumThreadInstance?.topic}">
+				<li class="fieldcontain">
+					<span id="topic-label" class="property-label"><g:message code="forumThread.topic.label" default="Topic" /></span>
+					
+						<span class="property-value" aria-labelledby="topic-label"><g:link controller="forumTopic" action="show" id="${forumThreadInstance?.topic?.id}">${forumThreadInstance?.topic?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 			
 				<g:if test="${forumThreadInstance?.posts}">
 				<li class="fieldcontain">
@@ -39,15 +49,6 @@
 						<g:each in="${forumThreadInstance.posts}" var="p">
 						<span class="property-value" aria-labelledby="posts-label"><g:link controller="post" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
 						</g:each>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${forumThreadInstance?.topic}">
-				<li class="fieldcontain">
-					<span id="topic-label" class="property-label"><g:message code="forumThread.topic.label" default="Topic" /></span>
-					
-						<span class="property-value" aria-labelledby="topic-label"><g:link controller="forumTopic" action="show" id="${forumThreadInstance?.topic?.id}">${forumThreadInstance?.topic?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

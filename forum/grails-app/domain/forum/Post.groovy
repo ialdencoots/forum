@@ -17,4 +17,11 @@ class Post {
     static constraints = {
 		message blank: false
     }
+
+	String toString() {
+		if (message.size() < 30) {
+			return message
+		}
+		else return message[0..29] + '...'
+	}
 }
