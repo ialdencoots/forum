@@ -23,6 +23,7 @@ class BootStrap {
 	def top3 = new ForumTopic(name: "Beer").save(flush: true)
 	def thread1 = new ForumThread(title: "Test Thread", topic: top3, date: new Date()).save(flush:true)
 	def post1 = new Post(user: testUser, thread: thread1, message: "Hälften av alla som drunkar har alkohol i blodet.").save(flush: true)
+	def post2 = new Post(user: testUser, thread: thread1, message: "Apan gillar bananananananananer").save(flush: true)
 
 	assert ForumUser.count() == 2
 	assert ForumRole.count() == 2
