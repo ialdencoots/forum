@@ -38,7 +38,7 @@ class ForumUserController {
             return
         }
 
-        [forumUserInstance: forumUserInstance]
+        [forumUserInstance: forumUserInstance, forumUserPosts: forumUserInstance.getPosts()]
     }
 
     def edit(Long id) {

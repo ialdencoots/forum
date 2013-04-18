@@ -1,6 +1,7 @@
 package forum
 
 class ForumUser {
+	private static final Date NULL_DATE = new Date(0)
 
 	transient springSecurityService
 
@@ -10,6 +11,7 @@ class ForumUser {
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
+	Date signupDate = NULL_DATE
 
 	static hasMany = [posts: Post]
 
@@ -20,6 +22,7 @@ class ForumUser {
 
 	static mapping = {
 		password column: '`password`'
+		posts sort: 'time', order: 'asc'
 	}
 
 	Set<ForumRole> getAuthorities() {
@@ -28,6 +31,9 @@ class ForumUser {
 
 	def beforeInsert() {
 		encodePassword()
+		if (signupDate == NULL_DATE) {
+			signupDate = new Date()
+		}
 	}
 
 	def beforeUpdate() {
