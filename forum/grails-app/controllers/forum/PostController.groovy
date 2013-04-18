@@ -22,7 +22,7 @@ class PostController {
 		def currentUser = springSecurityService.currentUser
 		currentUser.attach() 
 
-        [postInstance: new Post(params), currentUserID: currentUser.getId()]
+        [postInstance: new Post(params), currentUserID: currentUser.getId(), threadID: params.threadID]
     }
 
     def save() {
@@ -33,7 +33,7 @@ class PostController {
         }
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'post.label', default: 'Post'), postInstance.id])
-        redirect(action: "show", id: postInstance.id)
+        redirect(action: "show", controller: "forumThread", id: postInstance.thread.id)
     }
 
     def show(Long id) {

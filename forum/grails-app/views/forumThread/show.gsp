@@ -4,6 +4,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
+		<g:javascript library="jquery" />
 		<g:set var="entityName" value="${message(code: 'forumThread.label', default: 'ForumThread')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
@@ -48,13 +49,24 @@
 				</g:if>
 			
 			</ol>
+
+			<div id="newPost">
+
+
 			<g:form>
 				<fieldset class="buttons">
-					<g:hiddenField name="id" value="${forumThreadInstance?.id}" />
-					<g:link class="edit" action="edit" id="${forumThreadInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+					<script type="text/javascript">
+						var threadID = ${forumThreadInstance?.id};
+					</script>
+					<button type="button" class="edit"
+						onclick="${ remoteFunction(
+										action: 'create',
+										controller: 'post',
+										params: '\'threadID=\' + threadID',
+										update: 'newPost')}">Comment</button>
 				</fieldset>
 			</g:form>
+			</div>
 		</div>
 	</body>
 </html>
