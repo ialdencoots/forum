@@ -1,8 +1,13 @@
 <div id="display_post">
-<br>
-Hej hej hemskt mycket hej!
-<br>
+
+<div id="post_user"
 <p>User: ${postInstance.user}<p>
+</div><br>
+
 <p>${postInstance.message}</p>
+
+<div id="post_date"
 <p>${postInstance.time}</p>
+</div>
+
 </div>
