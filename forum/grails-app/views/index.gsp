@@ -37,7 +37,7 @@
 	</head>
 	<body>
 		<div id="body">
-		<center><h1>DO you want to <a href="forumTopic/index">LOGIN</a> or <a href="forumUser/index">SIGNUP?</a></h1></center>
+		<center><h1>DO you want to <a href="/forum/login/auth">LOGIN</a> or <a href="/forum/forumUser/create">SIGNUP?</a></h1></center>
 		
 		</div>
 	</body>
