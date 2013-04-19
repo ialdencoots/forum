@@ -24,24 +24,12 @@
 			<ol class="property-list forumTopic">
 			
 				<g:if test="${forumTopicInstance?.threads}">
-				<li class="fieldcontain">
-					<span id="threads-label" class="property-label"><g:message code="forumTopic.threads.label" default="Threads" /></span>
 					
-						<g:each in="${forumTopicInstance.threads}" var="t">
-						<span class="property-value" aria-labelledby="threads-label"><g:link controller="forumThread" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
+					<g:render template="/displaythread" collection="${forumTopicInstance?.threads}" var="threadInstance"/>
+
 				</g:if>
 			
 			</ol>
-			<g:form>
-				<fieldset class="buttons">
-					<g:hiddenField name="id" value="${forumTopicInstance?.id}" />
-					<g:link class="edit" action="edit" id="${forumTopicInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-				</fieldset>
-			</g:form>
 		</div>
 	</body>
 </html>

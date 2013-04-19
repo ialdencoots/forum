@@ -30,7 +30,7 @@ class ForumThreadController {
 		postInstance.user = springSecurityService.currentUser
         def forumThreadInstance = new ForumThread(params).addToPosts(postInstance)
         if (!forumThreadInstance.save(flush: true)) {
-            render(view: "create", model: [forumThreadInstance: forumThreadInstance, postInstance: postInstance])
+            render(view: "create", model: [forumThreadInstance: forumThreadInstance, postInstance: postInstance, topicID: params.topic.id])
             return
         }
         if (!postInstance.save(flush: true)) {
