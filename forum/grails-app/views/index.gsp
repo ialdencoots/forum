@@ -43,6 +43,8 @@
 		<center><h1>DO you want to <a href="/forum/login/auth">LOGIN</a> or <a href="/forum/forumUser/create">SIGNUP?</a></h1></center>
 >>>>>>> bobby
 		
+		<center><p><h1>Neither? Then just checkout the diffrent <a href="/forum/forumTopic/list/">TOPICS</a> </h1></p></center>
+		
 		</div>
 	</body>
 </html>
