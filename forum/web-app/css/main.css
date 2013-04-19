@@ -642,7 +642,46 @@ a.header-main:link, a.header-main:visited {
 
 }
 
+#comment_button{
+	background-color: #efefef;
+	overflow: hidden;
+	padding: 0.3em;
+	margin: 0.1em 0 0 0;
+	border: none;
+	background-image: url(../images/skin/database_edit.png);
+	background-position: 0.7em center;
+	background-repeat: no-repeat;
+	text-indent: 25px;
+
+	   -moz-border-radius: 0.3em;
+	-webkit-border-radius: 0.3em;
+	        border-radius: 0.3em;
+}
+
+#comment_button:hover {
+	background-color: #999999;
+	color: #ffffff;
+	outline: none;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+	   -moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
+}
+
 #display_post{
-	background-color:green;
-	
+	background-color:#6B8E23;
+	color:#B0E0E6;
+	padding: 1em 1em 1em 1em;
+	border-style:double;
+	border-radius: 1em 2em 1em 2em;
+	margin-bottom:1em;
+	display:block;
+}
+
+#post_user{
+	float:left;
+}
+
+#post_date{
+	float:right;
 }
