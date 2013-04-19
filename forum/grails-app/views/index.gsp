@@ -37,11 +37,8 @@
 	</head>
 	<body>
 		<div id="body">
-<<<<<<< HEAD
-		<center><h1>DO you want to <a href="forumTopic/index">LOGIN</a> or <a href="forumUser/index">SIGNUP?</a></h1></center>
-=======
 		<center><h1>DO you want to <a href="/forum/login/auth">LOGIN</a> or <a href="/forum/forumUser/create">SIGNUP?</a></h1></center>
->>>>>>> bobby
+
 		
 		<center><p><h1>Neither? Then just checkout the diffrent <a href="/forum/forumTopic/list/">TOPICS</a> </h1></p></center>
 		
