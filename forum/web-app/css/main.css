@@ -673,13 +673,19 @@ a.header-main:link, a.header-main:visited {
 	color:#B0E0E6;
 	padding: 1em 1em 1em 1em;
 	border-style:double;
-	border-radius: 1em 2em 1em 2em;
+	border-radius: 0em 0em 1em 2em;
 	margin-bottom:1em;
 	display:block;
 }
 
-#post_user{
-	float:left;
+#post_head{
+	background-color:#6B8E23;
+	color:#B0E0E6;
+	padding: 0em 1em 0em 1em;
+	border-style:double;
+	border-radius: 2em 2em 0em 0em;
+	margin-bottom:0em;
+	display:block;
 }
 
 #post_date{
