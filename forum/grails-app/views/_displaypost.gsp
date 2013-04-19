@@ -1,13 +1,8 @@
-<div id="display_post">
-
-<div id="post_user"
-<<<<<<< HEAD
+<div id="post_head"
 <p>User: <g:link controller="forumUser" action="show" id="${postInstance.user.id}">${postInstance.user}</g:link><p>
-=======
-<p>User: ${postInstance.user}<p>
->>>>>>> bobby
-</div><br>
+</div>
 
+<div id="display_post">
 <p>${postInstance.message}</p>
 
 <div id="post_date"

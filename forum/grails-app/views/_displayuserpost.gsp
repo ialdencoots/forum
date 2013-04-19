@@ -1,8 +1,8 @@
-<div id="display_post">
-
-<div id="post_user"
+<div id="post_head"
 <p>Thread: <g:link controller="forumThread" action="show" id="${postInstance.thread.id}">${postInstance.thread}</g:link><p>
-</div><br>
+</div>
+
+<div id="display_post">
 
 <p>${postInstance.message}</p>
 
