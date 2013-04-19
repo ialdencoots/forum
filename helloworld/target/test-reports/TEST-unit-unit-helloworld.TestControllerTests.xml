@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="5" hostname="Bobby-Falcks-MacBook-Pro.local" name="helloworld.TestControllerTests" tests="8" time="2.24" timestamp="2013-04-12T10:12:06">
+  <properties />
+  <testcase classname="helloworld.TestControllerTests" name="testIndex" time="0.602" />
+  <testcase classname="helloworld.TestControllerTests" name="testList" time="0.652" />
+  <testcase classname="helloworld.TestControllerTests" name="testCreate" time="0.177" />
+  <testcase classname="helloworld.TestControllerTests" name="testSave" time="0.16">
+    <failure message="Assertion failed: &#xa;&#xa;assert response.redirectedUrl == &apos;/test/show/1&apos;&#xa;       |        |             |&#xa;       |        null          false&#xa;       org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@11d612fc&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Assertion failed: 
+
+assert response.redirectedUrl == &apos;/test/show/1&apos;
+       |        |             |
+       |        null          false
+       org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@11d612fc
+
+	at helloworld.TestControllerTests.testSave(TestControllerTests.groovy:48)
+</failure>
+  </testcase>
+  <testcase classname="helloworld.TestControllerTests" name="testShow" time="0.268">
+    <failure message="Assertion failed: &#xa;&#xa;assert test.save() != null&#xa;       |    |      |&#xa;       |    null   false&#xa;       helloworld.Test : (unsaved)&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Assertion failed: 
+
+assert test.save() != null
+       |    |      |
+       |    null   false
+       helloworld.Test : (unsaved)
+
+	at helloworld.TestControllerTests.testShow(TestControllerTests.groovy:62)
+</failure>
+  </testcase>
+  <testcase classname="helloworld.TestControllerTests" name="testEdit" time="0.09">
+    <failure message="Assertion failed: &#xa;&#xa;assert test.save() != null&#xa;       |    |      |&#xa;       |    null   false&#xa;       helloworld.Test : (unsaved)&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Assertion failed: 
+
+assert test.save() != null
+       |    |      |
+       |    null   false
+       helloworld.Test : (unsaved)
+
+	at helloworld.TestControllerTests.testEdit(TestControllerTests.groovy:80)
+</failure>
+  </testcase>
+  <testcase classname="helloworld.TestControllerTests" name="testUpdate" time="0.112">
+    <failure message="Assertion failed: &#xa;&#xa;assert test.save() != null&#xa;       |    |      |&#xa;       |    null   false&#xa;       helloworld.Test : (unsaved)&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Assertion failed: 
+
+assert test.save() != null
+       |    |      |
+       |    null   false
+       helloworld.Test : (unsaved)
+
+	at helloworld.TestControllerTests.testUpdate(TestControllerTests.groovy:100)
+</failure>
+  </testcase>
+  <testcase classname="helloworld.TestControllerTests" name="testDelete" time="0.085">
+    <failure message="Assertion failed: &#xa;&#xa;assert test.save() != null&#xa;       |    |      |&#xa;       |    null   false&#xa;       helloworld.Test : (unsaved)&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Assertion failed: 
+
+assert test.save() != null
+       |    |      |
+       |    null   false
+       helloworld.Test : (unsaved)
+
+	at helloworld.TestControllerTests.testDelete(TestControllerTests.groovy:144)
+</failure>
+  </testcase>
+  <system-out><![CDATA[--Output from testIndex--
+--Output from testList--
+--Output from testCreate--
+--Output from testSave--
+--Output from testShow--
+--Output from testEdit--
+--Output from testUpdate--
+--Output from testDelete--
+]]></system-out>
+  <system-err><![CDATA[--Output from testIndex--
+--Output from testList--
+--Output from testCreate--
+--Output from testSave--
+--Output from testShow--
+--Output from testEdit--
+--Output from testUpdate--
+--Output from testDelete--
+]]></system-err>
+</testsuite>
