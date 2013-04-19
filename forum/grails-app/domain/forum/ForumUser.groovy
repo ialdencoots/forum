@@ -22,7 +22,7 @@ class ForumUser {
 
 	static mapping = {
 		password column: '`password`'
-		posts sort: 'time', order: 'asc'
+		posts sort: 'time', order: 'desc'
 	}
 
 	Set<ForumRole> getAuthorities() {

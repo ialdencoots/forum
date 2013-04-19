@@ -29,6 +29,7 @@ class ForumThreadController {
 		postInstance.message = params.message
 		postInstance.user = springSecurityService.currentUser
         def forumThreadInstance = new ForumThread(params).addToPosts(postInstance)
+		forumThreadInstance.created = postInstance.getTime()
         if (!forumThreadInstance.save(flush: true)) {
             render(view: "create", model: [forumThreadInstance: forumThreadInstance, postInstance: postInstance, topicID: params.topic.id])
             return
