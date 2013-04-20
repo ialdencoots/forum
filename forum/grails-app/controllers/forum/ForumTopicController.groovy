@@ -12,7 +12,7 @@ class ForumTopicController {
 
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        [forumTopicInstanceList: ForumTopic.list(params), forumTopicInstanceTotal: ForumTopic.count()]
+        [forumTopicInstanceList: ForumTopic.list(sort: "name"), forumTopicInstanceTotal: ForumTopic.count()]
     }
 
     def create() {
@@ -27,7 +27,7 @@ class ForumTopicController {
         }
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'forumTopic.label', default: 'ForumTopic'), forumTopicInstance.id])
-        redirect(action: "show", id: forumTopicInstance.id)
+        redirect(action: "list")
     }
 
     def show(Long id) {
