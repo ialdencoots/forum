@@ -15,29 +15,17 @@
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
-		<div id="list-forumTopic" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+		<div id="show-forumThread" class="content scaffold-show" role="main">
+			<h1>Topics</h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
-				<thead>
-					<tr>
-					
-						<g:sortableColumn property="name" title="${message(code: 'forumTopic.name.label', default: 'Name')}" />
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${forumTopicInstanceList}" status="i" var="forumTopicInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${forumTopicInstance.id}">${fieldValue(bean: forumTopicInstance, field: "name")}</g:link></td>
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
+			<ol class="property-list forumTopic">
+
+			<g:render template="displaytopic" collection="${forumTopicInstanceList}" var="topicInstance" />
+
+			</ol>
+
 			<div class="pagination">
 				<g:paginate total="${forumTopicInstanceTotal}" />
 			</div>

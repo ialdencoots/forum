@@ -668,6 +668,29 @@ a.header-main:link, a.header-main:visited {
 	        box-shadow: none;
 }
 
+#display_topic{
+	background-color:#6B8E23;
+	color:#B0E0E6;
+	padding: 1em 1em 1em 1em;
+	border-style:double;
+	border-radius: 1em 2em 1em 2em;
+	margin-bottom:1em;
+	display:block;
+	text-align: center;
+}
+
+#display_topic:hover{
+	background-color:#9ACD32;
+	color:#B0E0E6;
+	padding: 1em 1em 1em 1em;
+	border-style:double;
+	border-radius: 1em 2em 1em 2em;
+	margin-bottom:1em;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 #display_thread{
 	background-color:#6B8E23;
 	color:#B0E0E6;
