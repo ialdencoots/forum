@@ -6,7 +6,7 @@ class ForumTopic {
 	static hasMany = [threads: ForumThread]
 
     static constraints = {
-		name blank: false
+		name blank: false, unique: true
     }
 
 	static mapping = {
